@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Library</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="container">
+    <button id="open-form" onclick="openForm()">New Book</button>
+    <div id="form-popup">
+    <form action="">
+    <label for="title">Title</label><br>
+    <input type="text" name="title" id="title" value=""><br>
+    <label for="author">Author</label><br>
+    <input type="text" name="author" id="author" value=""><br>
+    <label for="pages">Number of pages</label><br>
+    <input type="number" name="pages" id="pages" value=""><br>
+    <label for="read">Already read?</label>
+    <input type="checkbox" name="read" id="read" value=""><br>
+    <input type="button" name="" id="addBookButton" value="Add book">
+    </form>
+    </div>
+
+
+    <div id="booksShelf">    
+    </div>
+
+</div>
+</body>
+</html>
