@@ -25,6 +25,7 @@ function createBook(){
             let newBookDiv = document.createElement('div')
             let authorDiv = document.createElement('div')
             let pagesDiv = document.createElement('div')
+            let readYet = document.createElement('div')
             let remove = document.createElement('button')
             bookCard.classList.add('bookCard')
             newBookDiv.classList.add('book')
@@ -36,7 +37,8 @@ function createBook(){
             booksShelf.appendChild(bookCard)
             bookCard.appendChild(newBookDiv)
             bookCard.appendChild(authorDiv)
-            bookCard.appendChild(pagesDiv)                        
+            bookCard.appendChild(pagesDiv) 
+            bookCard.appendChild(readYet)                       
             remove.textContent = 'Remove Book'
             remove.classList.add('remove')
             bookCard.appendChild(remove)
@@ -44,11 +46,13 @@ function createBook(){
                 bookCard.parentElement.removeChild(bookCard)        
              })
             read.checked == true ? bookCard.style.borderColor = 'lightgreen': bookCard.style.borderColor = 'pink'
+            read.checked == true ? readYet.textContent = 'Already Read': readYet.textContent = 'Not Read Yet'
             let readButton = document.createElement('button')
             readButton.textContent = 'Change Read Status'
             bookCard.appendChild(readButton)
             readButton.addEventListener('click', function(e){                
                 bookCard.style.borderColor == 'lightgreen' ? bookCard.style.borderColor = 'pink' : bookCard.style.borderColor = 'lightgreen'        
+                readYet.textContent == 'Already Read' ? readYet.textContent = 'Not Read Yet': readYet.textContent = 'Already Read'
              })
             
             
@@ -86,6 +90,7 @@ function showBooks() {
             let newBook = document.createElement('div')
             let author = document.createElement('div')
             let pages = document.createElement('div')
+            let readYet = document.createElement('div')
             let remove = document.createElement('button')
             bookCard.classList.add('bookCard')
             newBook.classList.add('book')
@@ -98,18 +103,28 @@ function showBooks() {
             bookCard.appendChild(newBook)
             bookCard.appendChild(author)
             bookCard.appendChild(pages)
+            bookCard.appendChild(readYet)
             remove.textContent = 'Remove Book'
             remove.classList.add('remove')
             bookCard.appendChild(remove)
             remove.addEventListener('click', function(e){                
                 bookCard.parentElement.removeChild(bookCard)        
              })
-            myLibrary[i].read == 'read' ? bookCard.style.borderColor = 'lightgreen': bookCard.style.borderColor = 'pink'
+            if(myLibrary[i].read == 'read'){
+                bookCard.style.borderColor = 'lightgreen'
+                readYet.textContent = 'Already Read'
+            }
+            else{
+                bookCard.style.borderColor = 'pink'
+                readYet.textContent = 'Not Read Yet'
+            }
+
             let readButton = document.createElement('button')
             readButton.textContent = 'Change Read Status'
             bookCard.appendChild(readButton)
             readButton.addEventListener('click', function(e){                
                 bookCard.style.borderColor == 'lightgreen' ? bookCard.style.borderColor = 'pink' : bookCard.style.borderColor = 'lightgreen'        
+                readYet.textContent == 'Already Read' ? readYet.textContent = 'Not Read Yet': readYet.textContent = 'Already Read'
              })          
         }        
     } 
@@ -117,6 +132,7 @@ showBooks();
 
 function openForm(){
     document.querySelector('#form-popup').style.display === 'none' ? document.querySelector('#form-popup').style.display = 'block': document.querySelector('#form-popup').style.display = 'none'
+    
 }
 
 
