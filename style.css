@@ -106,10 +106,14 @@ body{
 }
 
 input[type=text], input[type=number]{
-    background-color: rgb(231, 218, 218);
+    background-color: rgb(250, 242, 242);
     border: none;
     height: 100%;
     width: 100%;
     border-radius: 20px;
+    font-family: 'Itim';
+    padding: 5px
 }
+
+
 
