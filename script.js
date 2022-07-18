@@ -1,16 +1,17 @@
 let myLibrary = []
 
-function Book(title, author, pages, read) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-    this.info = function(){
-        return `${title}, ${author}, ${pages}, ${read}`        
+class Book {
+    constructor(title, author, pages, read){
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.read = read
     }
-
-    //constructor
+    info(){
+        return `${this.title}, ${this.author}, ${this.pages}, ${this.read}` 
+    }
 }
+
 const theDeadZone = new Book('The Dead Zone', 'by Stephen King', '428 pages', 'read')
 myLibrary.push(theDeadZone)
 const treasureIsland = new Book('The Treasure Island', 'by Robert Louis Stevenson', '283 pages', 'Not read yet')
